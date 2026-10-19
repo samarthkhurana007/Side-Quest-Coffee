@@ -1,0 +1,143 @@
+/* Side Quest Coffee Co. - shared stylesheet for index.html and games.html */
+
+:root {
+  --juniper: #1F4D45;
+  --juniper-dark: #163A34;
+  --amber: #E3A72F;
+  --paper: #F3F5F0;
+  --ink: #1F2A27;
+  --line: #C9D3CC;
+  --wood: #9A6B3F;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.2;
+  color: var(--juniper);
+}
+
+h1 { font-size: 2.4rem; margin: 0 0 0.5rem; }
+h2 { font-size: 1.7rem; margin: 0 0 0.75rem; }
+h3 { font-size: 1.2rem; margin: 0 0 0.25rem; }
+
+a { color: var(--juniper); }
+a:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+
+/* Header and navigation */
+.site-header {
+  background: var(--juniper);
+  color: var(--paper);
+}
+
+.header-inner {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.brand img { width: 96px; height: 96px; display: block; }
+
+.site-nav { display: flex; gap: 0.5rem; }
+
+.site-nav a {
+  color: var(--paper);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  font-weight: 600;
+}
+
+.site-nav a:hover { border-color: var(--amber); }
+.site-nav a:focus-visible { outline: 3px solid var(--amber); }
+.site-nav a[aria-current="page"] { background: var(--amber); color: var(--ink); }
+
+/* Layout */
+main { max-width: 62rem; margin: 0 auto; padding: 1.5rem 1.25rem 2rem; }
+section { margin-bottom: 2.5rem; }
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  border: 4px solid var(--wood);
+}
+
+.lead { font-size: 1.2rem; }
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* Tables */
+.table-wrap { overflow-x: auto; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background: #fff;
+  border: 2px solid var(--juniper);
+}
+
+th, td { padding: 0.6rem 0.9rem; text-align: left; border-bottom: 1px solid var(--line); }
+th { background: var(--juniper); color: var(--paper); }
+td.price { white-space: nowrap; }
+tr.closed td { font-weight: 700; color: #8A2B14; }
+
+/* Events */
+.event { border-left: 6px solid var(--amber); padding-left: 1rem; margin-bottom: 1.25rem; }
+.event p { margin: 0; }
+
+.contact-list { list-style: none; padding: 0; margin: 0; }
+.contact-list li { margin-bottom: 0.4rem; }
+
+/* Footer */
+.site-footer {
+  background: var(--juniper-dark);
+  color: var(--paper);
+  text-align: center;
+  padding: 1.25rem;
+}
+.site-footer p { margin: 0.2rem 0; }
+.site-footer a { color: var(--amber); }
+
+/* Text for screen readers only (table captions) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .hero, .two-col { grid-template-columns: 1fr; }
+  h1 { font-size: 2rem; }
+}
